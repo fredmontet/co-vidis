@@ -31,8 +31,7 @@ jobs:
     
     - name: Execute the notebook and generate HTML
       run: |
-        jupyter nbconvert --execute ./notebooks/co-vidis.ipynb
-        jupyter nbconvert ./notebooks/co-vidis.ipynb --output-dir=./reports --TagRemovePreprocessor.remove_cell_tags='{"remove_cell"}' --TagRemovePreprocessor.remove_input_tags='{"remove_input"}'
+        jupyter nbconvert ./notebooks/co-vidis.ipynb --execute --output-dir=./reports --TagRemovePreprocessor.remove_cell_tags='{"remove_cell"}' --TagRemovePreprocessor.remove_input_tags='{"remove_input"}'
   
     - name: Build for publication
       run: |
@@ -44,5 +43,5 @@ jobs:
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
       with:
-        args: deploy --dir=reports
+        args: deploy --prod --dir=reports
         secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
