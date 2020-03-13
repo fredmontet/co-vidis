@@ -34,6 +34,6 @@ jobs:
         jupyter nbconvert --execute ./notebooks/co-vidis.ipynb
         jupyter nbconvert ./notebooks/co-vidis.ipynb --output-dir=./reports --TagRemovePreprocessor.remove_cell_tags='{"remove_cell"}' --TagRemovePreprocessor.remove_input_tags='{"remove_input"}'
   
-    - name: End
+    - name: Build for publication
       run: |
-        echo "The end"
+        mv reports/co-vidis.html reports/index.html
