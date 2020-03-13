@@ -25,15 +25,19 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     
-    - name: Execute the notebook and generate HTML
+    - name: Pull data
       run: |
         git clone https://github.com/CSSEGISandData/COVID-19.git ./data/raw/COVID-19-master
-        jupyter nbconvert --execute ./notebooks/co-vidis.ipynb
-        jupyter nbconvert ./notebooks/co-vidis.ipynb --output-dir=./reports --TagRemovePreprocessor.remove_cell_tags='{"remove_cell"}' --TagRemovePreprocessor.remove_input_tags='{"remove_input"}'
+    
+    - name: Execute the notebook
+      run: |
+        jupyter nbconvert ./notebooks/co-vidis.ipynb --execute --to notebook --output-dir=./reports
   
     - name: Build for publication
       run: |
-        mv reports/co-vidis.html reports/index.html
+        jupyter nbconvert ./reports/co-vidis.nbconvert.ipynb --output-dir=./reports --TagRemovePreprocessor.remove_cell_tags='{"remove_cell"}' --TagRemovePreprocessor.remove_input_tags='{"remove_input"}'
+        rm ./reports/co-vidis.nbconvert.ipynb
+        mv ./reports/co-vidis.html ./reports/index.html
 
     - name: Deploy to netlify
       uses: netlify/actions/cli@master
