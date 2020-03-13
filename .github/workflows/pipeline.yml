@@ -24,11 +24,15 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        
-    - name: Generate HTML
-      run: |
-        jupyter nbconvert notebooks/co-vidis.ipynb --output-dir=reports --TagRemovePreprocessor.remove_cell_tags='{"remove_cell"}' --TagRemovePreprocessor.remove_input_tags='{"remove_input"}'
     
+    - name: Pull data
+      run: |
+        git clone git@github.com:CSSEGISandData/COVID-19.git ./data/raw/COVID-19-master
+    
+    - name: Execute the notebook and generate HTML
+      run: |
+        jupyter nbconvert ./notebooks/co-vidis.ipynb --execute --output-dir=./reports --TagRemovePreprocessor.remove_cell_tags='{"remove_cell"}' --TagRemovePreprocessor.remove_input_tags='{"remove_input"}'
+  
     - name: End
       run: |
         echo "The end"
