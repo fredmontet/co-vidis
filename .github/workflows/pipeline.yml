@@ -35,8 +35,8 @@ jobs:
   
     - name: Build for publication
       run: |
-        jupyter nbconvert ./reports/co-vidis.nbconvert.ipynb --output-dir=./reports --TagRemovePreprocessor.remove_cell_tags='{"remove_cell"}' --TagRemovePreprocessor.remove_input_tags='{"remove_input"}'
-        rm ./reports/co-vidis.nbconvert.ipynb
+        jupyter nbconvert ./reports/co-vidis.ipynb --output-dir=./reports --TagRemovePreprocessor.remove_cell_tags='{"remove_cell"}' --TagRemovePreprocessor.remove_input_tags='{"remove_input"}'
+        rm ./reports/co-vidis.ipynb
         mv ./reports/co-vidis.html ./reports/index.html
 
     - name: Deploy to netlify
