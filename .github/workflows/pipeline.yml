@@ -27,7 +27,7 @@ jobs:
         
     - name: Generate HTML
       run: |
-        jupyter nbconvert notebooks/covid-19.ipynb --output-dir=reports --TagRemovePreprocessor.remove_cell_tags='{"remove_cell"}' --TagRemovePreprocessor.remove_input_tags='{"remove_input"}'
+        jupyter nbconvert notebooks/co-vidis.ipynb --output-dir=reports --TagRemovePreprocessor.remove_cell_tags='{"remove_cell"}' --TagRemovePreprocessor.remove_input_tags='{"remove_input"}'
     
     - name: End
       run: |
