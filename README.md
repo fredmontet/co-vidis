@@ -1,6 +1,30 @@
-CO VIDIS?
-========
+Cō Vidis?
+=========
 
-*Co Vidis?, latin for "COVID-19, where are you going?"*
+**Cō Vidis?** [kʷoː ˈwɪːdɪs] ➡️ latin for "COVID-19, where are you going?"
+(https://en.wikipedia.org/wiki/Quo_vadis)
 
-An analysis of the COVID-19 situation.
+A Dashboard to follow the state of the Coronavirus with a focus on Switzerland
+
+Get Started
+-----------
+
+Install the dependencies and start the notebook
+
+    pip install -r requirements.txt
+    jupyter notebook
+
+
+How to Contribute
+-----------------
+
+Fork the repo and add the data
+
+    git clone <your forked repository>
+    cd <your forked repository>
+    git clone https://github.com/CSSEGISandData/COVID-19 ./data/raw/COVID-19-master
+
+Author
+------
+
+Fred Montet (https://twitter.com/fredmontet)
