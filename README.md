@@ -1,7 +1,7 @@
 Cō Vidis?
 =========
 
-**Cō Vidis?** [kʷoː ˈwɪːdɪs] ➡️ latin for "COVID-19, where are you going?"
+**Cō Vidis?** [kʷoː ˈwɪːdɪs] ➡️ latin for "COVID-19, where are you going?"<br/>
 (https://en.wikipedia.org/wiki/Quo_vadis)
 
 A Dashboard to follow the state of the Coronavirus with a focus on Switzerland
