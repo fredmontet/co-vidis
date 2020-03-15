@@ -14,3 +14,4 @@ seaborn
 numpy
 pandas
 scikit-learn
+fbprophet
