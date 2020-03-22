@@ -132,6 +132,7 @@ dependencies:
   - prompt-toolkit=3.0.4
   - prompt_toolkit=3.0.4
   - ptyprocess=0.6.0
+  - pycountry=19.8.18
   - pycparser=2.20
   - pyepsg=0.4.0
   - pygments=2.6.1

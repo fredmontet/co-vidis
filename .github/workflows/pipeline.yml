@@ -29,7 +29,13 @@ jobs:
         python-version: 3.7
         auto-activate-base: false
 
+    - name: Install pip dependencies
+      shell: bash -l {0}
+      run: |
+        pip install reverse_geocoder
+
     - name: Pull data
+      shell: bash -l {0}
       run: |
         git clone https://github.com/CSSEGISandData/COVID-19.git ./data/raw/COVID-19-master
     
