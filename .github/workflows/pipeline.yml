@@ -24,6 +24,12 @@ jobs:
       with:
         args: conda env update -f ./environment.yml
 
+    - name: Select Co-vidis environment
+      run: |
+        which python
+        conda env list
+        conda activate co-vidis
+
     - name: Pull data
       run: |
         git clone https://github.com/CSSEGISandData/COVID-19.git ./data/raw/COVID-19-master
