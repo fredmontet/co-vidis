@@ -18,19 +18,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    
-    - name: Set up conda and install dependencies
-      uses: goanpeca/setup-miniconda@v1
+
+    - name: Update Conda environment with "requirements.yml"
+      uses: matthewrmshin/conda-action@v1
       with:
-        activate-environment: co-vidis
-        channels: conda-forge
-        environment-file: environment.yml
-        python-version: 3.7
-        auto-activate-base: false
-    - shell: bash -l {0}
-      run: |
-        conda info
-        conda list
+        args: conda env update -f ./environment.yml
 
     - name: Pull data
       run: |
