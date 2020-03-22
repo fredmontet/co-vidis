@@ -24,7 +24,7 @@ jobs:
     - name: Install Conda Environment
       run: |
         conda --version
-        which Python
+        which python
         conda env create -f environment.yml
         conda activate co-vidis
 
