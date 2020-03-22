@@ -35,10 +35,12 @@ jobs:
     
     - name: Execute the notebook
       run: |
+        conda activate co-vidis
         jupyter nbconvert ./notebooks/co-vidis.ipynb --execute --to notebook --output-dir=./reports
   
     - name: Build for publication
       run: |
+        conda activate co-vidis
         jupyter nbconvert ./reports/co-vidis.ipynb --output-dir=./reports --TagRemovePreprocessor.remove_cell_tags='{"remove_cell"}' --TagRemovePreprocessor.remove_input_tags='{"remove_input"}'
         rm ./reports/co-vidis.ipynb
         mv ./reports/co-vidis.html ./reports/index.html
