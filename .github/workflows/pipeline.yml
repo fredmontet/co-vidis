@@ -28,8 +28,11 @@ jobs:
         environment-file: environment.yml
         python-version: 3.7
         auto-activate-base: false
-      run: |
+
+    - run: |
         conda init bash
+
+    - run: |
         conda activate co-vidis
 
     - name: Pull data
