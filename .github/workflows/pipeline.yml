@@ -17,16 +17,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Set up conda and install dependencies
     - uses: actions/checkout@v2
-    - name: Set up Conda and Install Dependencies
-      uses: s-weigand/setup-conda@v1
-
-    - name: Install Conda Environment
+    - uses: goanpeca/setup-miniconda@v1
+      with:
+        activate-environment: co-vidis
+        environment-file: environment.yml
+        python-version: 3.7
+        auto-activate-base: false
+    - shell: bash -l {0}
       run: |
-        conda --version
-        which python
-        conda env create -f environment.yml
-        conda activate co-vidis
+        conda info
+        conda list
 
     - name: Pull data
       run: |
