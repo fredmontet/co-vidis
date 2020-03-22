@@ -22,6 +22,7 @@ jobs:
     - name: Update Conda environment with "requirements.yml"
       uses: goanpeca/setup-miniconda@v1
       with:
+        conda-version: 4.8.3
         activate-environment: co-vidis
         channels: conda-forge
         environment-file: environment.yml
