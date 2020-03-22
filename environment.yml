@@ -5,7 +5,6 @@ channels:
   - defaults
 dependencies:
   - affine=2.3.0
-  - appnope
   - attrs=19.3.0
   - backcall=0.1.0
   - bleach=3.1.3
