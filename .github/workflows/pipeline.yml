@@ -19,9 +19,15 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set up Conda and Install Dependencies
-      uses: matthewrmshin/conda-action@v1
-      with:
-        args: conda env update -f ./requirements.txt
+      uses: s-weigand/setup-conda@v1
+      run: |
+        conda --version
+        which Python
+
+    - name: Install Conda Environment
+      run: |
+        conda env create -f environment.yml
+        conda activate co-vidis
 
     - name: Pull data
       run: |
