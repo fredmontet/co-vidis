@@ -20,12 +20,11 @@ jobs:
     - uses: actions/checkout@v2
     - name: Set up Conda and Install Dependencies
       uses: s-weigand/setup-conda@v1
-      run: |
-        conda --version
-        which Python
 
     - name: Install Conda Environment
       run: |
+        conda --version
+        which Python
         conda env create -f environment.yml
         conda activate co-vidis
 
