@@ -29,21 +29,17 @@ jobs:
         python-version: 3.7
         auto-activate-base: false
 
-    - run: |
-        conda init bash
-
-    - run: |
-        conda activate co-vidis
-
     - name: Pull data
       run: |
         git clone https://github.com/CSSEGISandData/COVID-19.git ./data/raw/COVID-19-master
     
     - name: Execute the notebook
+      shell: bash -l {0}
       run: |
         jupyter nbconvert ./notebooks/co-vidis.ipynb --execute --to notebook --output-dir=./reports
   
     - name: Build for publication
+      shell: bash -l {0}
       run: |
         jupyter nbconvert ./reports/co-vidis.ipynb --output-dir=./reports --TagRemovePreprocessor.remove_cell_tags='{"remove_cell"}' --TagRemovePreprocessor.remove_input_tags='{"remove_input"}'
         rm ./reports/co-vidis.ipynb
