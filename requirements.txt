@@ -14,4 +14,5 @@ seaborn
 numpy
 pandas
 scikit-learn
-fbprophet
+geopandas
+geoplot
