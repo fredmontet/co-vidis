@@ -32,7 +32,7 @@ jobs:
     - name: Install pip dependencies
       shell: bash -l {0}
       run: |
-        pip install reverse_geocoder
+        pip install reverse_geocoder countrynames
 
     - name: Pull data
       shell: bash -l {0}
