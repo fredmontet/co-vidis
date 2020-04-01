@@ -38,6 +38,7 @@ jobs:
       shell: bash -l {0}
       run: |
         git clone https://github.com/CSSEGISandData/COVID-19.git ./data/raw/COVID-19-master
+        git clone https://github.com/daenuprobst/covid19-cases-switzerland ./data/raw/covid19-cases-switzerland-master
     
     - name: Execute the notebook
       shell: bash -l {0}
