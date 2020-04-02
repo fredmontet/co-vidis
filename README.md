@@ -2,9 +2,16 @@ Cō Vidis?
 =========
 
 **Cō Vidis?** [kʷoː ˈwɪːdɪs] ➡️ latin for "COVID-19, where are you going?"<br/>
-(https://en.wikipedia.org/wiki/Quo_vadis)
+A word game between COVID and Quō vādis (https://en.wikipedia.org/wiki/Quo_vadis)
 
 A Dashboard to follow the state of the Coronavirus with a focus on Switzerland
+
+Data Sources
+------------
+
+- **World** : https://github.com/CSSEGISandData/COVID-19
+- **Switzerland** : https://github.com/daenuprobst/covid19-cases-switzerland
+
 
 Get Started
 -----------
