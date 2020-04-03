@@ -16,3 +16,5 @@ pandas
 scikit-learn
 geopandas
 geoplot
+reverse_geocoder 
+countrynames
